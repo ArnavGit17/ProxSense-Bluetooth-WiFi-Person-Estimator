@@ -1,0 +1,34 @@
+# ProxSense — Scenario File Format
+#
+# Each non-comment line defines one observation event:
+#   <time_s>  <source>  <mac>               <rssi_or_?>  [device_name]
+#
+# Fields:
+#   time_s        Relative time in seconds from scenario start (float)
+#   source        BT  = Bluetooth  |  WIFI = Wi-Fi
+#   mac           Colon-separated MAC address (AA:BB:CC:DD:EE:FF)
+#   rssi          RSSI in dBm (integer), or '?' if unavailable
+#   device_name   Optional human-readable device name (no spaces; use _ for spaces)
+#
+# Synthetic scenario labelled as 2 people, each with 1 BT device.
+# This fixture does not validate estimator accuracy; calibration is required.
+# Ground truth metadata: 2 people present in this deterministic simulation.
+#
+# NOTE: These are NOT real hardware readings.
+#       This file is used ONLY for deterministic testing of the pipeline.
+
+# Person 1: stable public BT address, consistent RSSI (~1.5 m away)
+0.000   BT   AA:BB:CC:DD:EE:01   -62   Alice-Phone
+1.000   BT   AA:BB:CC:DD:EE:01   -63   Alice-Phone
+2.000   BT   AA:BB:CC:DD:EE:01   -61   Alice-Phone
+3.000   BT   AA:BB:CC:DD:EE:01   -64   Alice-Phone
+4.000   BT   AA:BB:CC:DD:EE:01   -62   Alice-Phone
+5.000   BT   AA:BB:CC:DD:EE:01   -63   Alice-Phone
+
+# Person 2: stable public BT address, slightly weaker RSSI (~3 m away)
+0.200   BT   AA:BB:CC:DD:EE:02   -72   Bob-Phone
+1.200   BT   AA:BB:CC:DD:EE:02   -71   Bob-Phone
+2.200   BT   AA:BB:CC:DD:EE:02   -73   Bob-Phone
+3.200   BT   AA:BB:CC:DD:EE:02   -70   Bob-Phone
+4.200   BT   AA:BB:CC:DD:EE:02   -72   Bob-Phone
+5.200   BT   AA:BB:CC:DD:EE:02   -71   Bob-Phone

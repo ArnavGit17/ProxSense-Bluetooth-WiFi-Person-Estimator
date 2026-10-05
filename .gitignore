@@ -1,0 +1,23 @@
+# Build output
+/build/
+*.o
+*.obj
+
+# Temporary files and logs
+*.log
+*.log.*
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# Editor and IDE files
+.vscode/
+.idea/
+.vs/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
